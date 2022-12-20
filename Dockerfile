@@ -118,7 +118,8 @@ COPY --from=sylius_node /srv/sylius/public/build public/build
 
 FROM nginx:${NGINX_VERSION}-alpine AS sylius_nginx
 
-COPY docker/nginx/conf.d/default.conf /etc/nginx/conf.d/
+#COPY docker/nginx/conf.d/default.conf /etc/nginx/conf.d/
+COPY docker/nginx/templates/default.conf.template /etc/nginx/templates/default.conf.template
 
 WORKDIR /srv/sylius
 
